@@ -13,5 +13,6 @@ IF %ERRORLEVEL% NEQ 0 cmake -DUSING_LUAJIT=ON -G "Visual Studio 15 2017 Win64" .
 popd
 cmake --build build_lj64 --config Release
 md plugin_luajit\Plugins\x86_64
-copy /Y build_lj64\Release plugin_luajit\Plugins\x86_64
+copy /Y build_lj64\Release\xlua.dll plugin_luajit\Plugins\x86_64\xlua.dll
+copy /Y build_lj64\Release\xlua.lib plugin_luajit\Plugins\x86_64\xlua.lib
 pause
