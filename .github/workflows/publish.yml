@@ -22,6 +22,8 @@ jobs:
         run: |
           cd build
           .\make_win64_luajit.bat
+      - name: Debug List Files
+        run: ls -R build/plugin_luajit/  # Linux 或 Get-ChildItem -Recurse build\plugin_luajit\  # Windows
       - name: UploadJit
         uses: actions/upload-artifact@v3
         with:
