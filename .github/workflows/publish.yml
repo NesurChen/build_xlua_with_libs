@@ -22,11 +22,9 @@ jobs:
         run: |
           cd build
           .\make_win64_luajit.bat
-      - name: Debug List Files
-        shell: cmd
-        run: dir /s build\plugin_luajit\
       - name: UploadJit
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          path: ./build/plugin_luajit/**/*
+          # path: ./build/plugin_luajit/**/*
+          path: ./build/build_lj64/Release/
           name: plugin_luajit
